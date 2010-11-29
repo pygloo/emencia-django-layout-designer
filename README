@@ -1,5 +1,158 @@
-=====================================
-emencia-django-layout-designer
-=====================================
 
-TODO
+Emencia-Django-Layout-Designer
+==============================
+
+.. contents:: Table of Contents
+
+A Django application for easily design a newsletter in EDN.
+
+
+Requirements
+~~~~~~~~~~~~
+
+EDLD is an extension af the EDN admin app developped by emancia. To make
+it works, installing the EDN app in your django project is mandatory.
+
+Please take a tour to the EDN install guide for a good start. Then make your
+newsletter editing easier with the layout designer::
+
+    http//github.com/Fantomas42/emencia-django-newsletter
+
+
+Installation
+~~~~~~~~~~~~
+
+Unfortunatally this module is not released yet. But you can install it simply
+as follow after coling the main github repository of the project::
+
+    git clone git@github.com:pygloo/emencia-django-layout-designer.git
+    cd emencia-django-layout-designer
+    python setup.py install (or develop)
+
+
+The settings file
+~~~~~~~~~~~~~~~~~
+
+Add `'django_wysiwyg'` to your `INSTALLED_APPS` in `settings.py`::
+
+    INSTALLED_APPS = (
+        ...
+        'emencia.django.layout.designer',
+    )
+
+To manage file uploading in the layout designer you should create an uploads
+under the /media/edld folder as follow::
+
+    /media/edld/css
+    /media/edld/js
+    /media/edld/uploads
+
+All uploaded files will go there using a random name and will be available
+according the same mechanism::
+
+    ...
+    <img src="/edld/uploads/XosvPkOfEZOOziCRaTnwvQMB" ...>
+
+
+The urls file
+~~~~~~~~~~~~~
+
+Admin import
+------------
+
+First we assume that the application has its admin part activated as follow.
+Here is how we import the required modules and init them to do so::
+
+    # Uncomment the next two lines to enable the admin:
+    from django.contrib import admin
+    admin.autodiscover()
+
+Additionally, we need to the admin form field named `content` that should
+implement our `LayoutDesignerWidget` widget. We wrote a simple admin module in
+the edld module to make it fast. Then a simple import, after the
+admin import and autodiscover lines do the job::
+    
+    # ...
+    from emencia.django.layout.designer import admin_edn
+
+Url patterns
+------------
+
+Here how you can set your urls now::
+
+    # django import
+    from django.conf.urls.defaults import include, patterns, url
+
+    urlpatterns = patterns('',
+        ...
+        url(r'^edld/', include('emencia.django.layout.designer.urls')),
+        url(r'^newsletters/', include('emencia.django.newsletter.urls')),
+        url(r'^admin/', include(admin.site.urls)),
+        ...
+    )
+
+Ok, maybe you need to deliver your files locally for some development reasons::
+
+    # ... a site settings
+    from  asite import settings
+
+    if settings.DEBUG:
+        urlpatterns += patterns('django.views.static',
+                       ...
+                       url(r'^edn/(?P<path>.*)$', 'serve',
+                           {'document_root': settings.MEDIA_ROOT + '/edn'}),
+                       url(r'^edld/(?P<path>.*)$', 'serve',
+                           {'document_root': settings.MEDIA_ROOT + '/edld'}),
+                       ...
+                       )
+
+
+Usage
+~~~~~
+
+From the `http://www.yoursite.com/admin/` url nothing has changed. Just go to
+the `Newsletter` submenu and again nothing has changed. Change appears when
+you add a new `Newsletter`. Now the old fashion way `textarea` should have
+disappeared.
+
+He is the point. It as been replaced by our designer. How it works? At start
+we just see the blue line we everything start. When we move our mouse over this
+line it opens and it shows 2 images:
+
+    * add a column
+    * add a row
+
+Then another, blue again, line appears. This line offer new possiblities:
+
+    * add a row (if column) || add a column (if row)
+    * add a text
+    * add an image
+    * remove the column (if column) || remove the row (if row)
+
+For example if we click on the icon `add text` a new empty cell should appear.
+3 icons are present in the bottom right part of this cell:
+
+    * move (for d'n'd issues)
+    * edit to change text and everything
+    * remove cell
+
+... your turn!
+
+
+Contact
+~~~~~~~
+
+If something does not correspond to the description, or if something is missing,
+just me an email at::
+
+    florent.pigout@bewype.org
+
+
+Credit
+~~~~~~
+
+Big thanks to Emencia for its support and for its contribution in such a cool
+open-source project::
+
+    http://www.emencia.fr
+
