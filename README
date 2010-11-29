@@ -75,6 +75,7 @@ admin import and autodiscover lines do the job::
     # ...
     from emencia.django.layout.designer import admin_edn
 
+
 Url patterns
 ------------
 
