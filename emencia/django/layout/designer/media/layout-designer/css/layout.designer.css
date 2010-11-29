@@ -1,0 +1,13 @@
+ul.layout-designer-places {
+    margin: 0;
+    padding: 0;
+}
+
+#id_preview {
+    display: block;
+    text-align: center;
+}
+
+input.yui3-entry-spinner-value {
+    margin: 0;
+}

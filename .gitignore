@@ -1,0 +1,11 @@
+*.orig
+*.rej
+*.swp
+*~
+*.pyc
+.installed.cfg
+emencia_django_layout_designer.egg-info/*
+eggs/*
+dist/*
+uploads/*
+bewype-yui3-gallery/*
