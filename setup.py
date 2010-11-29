@@ -25,7 +25,7 @@ setup(
     keywords='edn, emencia-django-newsletter, django',
     author='Pigout Florent',
     author_email='florent.pigout@gmail.com',
-    url='http://emencia.fr',
+    url='https://github.com/pygloo/emencia-django-layout-designer',
     license='MIT',
     packages=find_packages(exclude=['ez_setup']),
     namespace_packages=[
@@ -36,7 +36,11 @@ setup(
         ],
     include_package_data=True,
     zip_safe=False,
-    install_requires=['setuptools'],
+    install_requires=[
+        'django',
+        'south',
+        'emencia.django.newsletter'
+        ],
     setup_requires=[],
 )
 

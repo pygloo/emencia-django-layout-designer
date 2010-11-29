@@ -5,7 +5,6 @@
 import os, json
 
 # django import
-from django.conf import settings
 from django.http import HttpResponse
 
 try:
@@ -17,9 +16,12 @@ except ImportError:
         return fn
 
 # bewype import
-from emencia.django.layout.designer import utils
+from emencia.django.layout.designer import utils, settings
 
 def _get_file_info( file_ ):
+    """Ensure file image info dict to be returned to the ajax client for
+    rendering issue.
+    """
     # prepare data
     file_.seek(0)
     _data = file_.read()
@@ -34,14 +36,15 @@ def _get_file_info( file_ ):
 
 @csrf_exempt
 def upload(request):
-    """
+    """Simple upload callback. Store posted file in the set 'uploads' folder
+    using random file name for easy management.
     """
     # get file object from request
     _file = request.FILES['file']
     # get unique file name
     _file_name = utils.random_str(24)
     # get uploads path
-    _uploads_path = settings.EDLD_UPLOADS
+    _uploads_path = os.path.join(settings.MEDIA_ROOT, 'uploads')
     if os.path.exists( _uploads_path ):
         # do save
         _file_out = open(os.path.join(_uploads_path, _file_name), 'wb+')
