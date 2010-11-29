@@ -41,12 +41,10 @@ def upload(request):
     # get unique file name
     _file_name = utils.random_str(24)
     # get uploads path
-    _uploads_path = os.path.join(
-            os.path.dirname(__file__), 'media', 'uploads')
+    _uploads_path = settings.EDLD_UPLOADS
     if os.path.exists( _uploads_path ):
         # do save
         _file_out = open(os.path.join(_uploads_path, _file_name), 'wb+')
-
         # Iterate through chunks and write to destination.
         for _chunk in _file.chunks():
             _file_out.write(_chunk)
@@ -59,28 +57,4 @@ def upload(request):
         return HttpResponse(json.dumps(_file_info))
     else:
         return HttpResponse('')
-
-
-"""
-    # Get the uploaded file from request.
-    # upload = request.FILES['upload']
-    upload_ext = os.path.splitext(upload.name)[1]
-
-    # Open output file in which to store upload.
-    upload_filename = get_upload_filename(upload.name, request.user)
-    out = open(upload_filename, 'wb+')
-    # Iterate through chunks and write to destination.
-    for chunk in upload.chunks():
-        out.write(chunk)
-    out.close()
-
-    create_thumbnail(upload_filename)
-
-    # Respond with Javascript sending ckeditor upload url.
-    url = get_media_url(upload_filename)
-    return HttpResponse(""
-<script type='text/javascript'>
-window.parent.CKEDITOR.tools.callFunction(%s, '%s');
-</script>"" % (request.GET['CKEditorFuncNum'], url))
-"""
 

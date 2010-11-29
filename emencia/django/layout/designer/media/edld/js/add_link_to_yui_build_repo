@@ -1,0 +1,84 @@
+florent@florent-laptop:~$cd ~/Public/Dev/Python/Django/emancia/asite/media/edld/js
+florent@florent-laptop:~/.../js$ git clone git@github.com:pygloo/bewype-yui3-gallery.git tmp
+florent@florent-laptop:~/.../js$ mv tmp/build bewype-yui3-gallery
+florent@florent-laptop:~/.../js$ rm -rf tmp
+florent@florent-laptop:~/.../js$ cd bewype-yui3-gallery
+florent@florent-laptop:~/.../js/bewype-yui3-gallery$ ls -l
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 anim
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 arraysort
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 async-queue
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 attribute
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 autocomplete
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 base
+drwxr-xr-x 3 florent florent 4096 2010-11-24 19:01 bewype-button
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 bewype-color
+drwxr-xr-x 3 florent florent 4096 2010-11-24 19:01 bewype-editor
+drwxr-xr-x 3 florent florent 4096 2010-11-24 18:59 bewype-entry
+drwxr-xr-x 3 florent florent 4096 2010-11-29 13:07 bewype-layout-designer
+drwxr-xr-x 3 florent florent 4096 2010-11-28 01:22 bewype-picker
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 bewype-utils
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 cache
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 classnamemanager
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 collection
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 compat
+drwxr-xr-x 4 florent florent 4096 2010-11-16 10:20 console
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 cookie
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 cssbase
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 cssfonts
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 cssgrids
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 cssgrids-deprecated
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 cssreset
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 dataschema
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 datasource
+drwxr-xr-x 4 florent florent 4096 2010-11-16 10:20 datatable
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 datatype
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 dd
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 dolor
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 dom
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 dump
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 editor
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 escape
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 event
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 event-custom
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 event-gestures
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 event-simulate
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 event-valuechange
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 highlight
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 history
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 history-deprecated
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 imageloader
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 intl
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 io
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 json
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 jsonp
+drwxr-xr-x 2 florent florent 4096 2010-11-16 14:11 loader
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 node
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 node-flick
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 node-focusmanager
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 node-menunav
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 oop
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 overlay
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 plugin
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 pluginhost
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 profiler
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 querystring
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 queue-promote
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 recordset
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 scrollview
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 simpleyui
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 slider
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 sortable
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 stylesheet
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 substitute
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 swf
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 swfdetect
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 tabview
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 test
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 transition
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 unicode
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 uploader
+drwxr-xr-x 3 florent florent 4096 2010-11-16 10:20 widget
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 widget-anim
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 yql
+drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 yui
+
