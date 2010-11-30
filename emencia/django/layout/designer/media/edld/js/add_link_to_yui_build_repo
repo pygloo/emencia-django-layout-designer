@@ -1,9 +1,9 @@
-florent@florent-laptop:~$cd ~/Public/Dev/Python/Django/emancia/asite/media/edld/js
-florent@florent-laptop:~/.../js$ git clone git@github.com:pygloo/bewype-yui3-gallery.git tmp
-florent@florent-laptop:~/.../js$ mv tmp/build bewype-yui3-gallery
-florent@florent-laptop:~/.../js$ rm -rf tmp
-florent@florent-laptop:~/.../js$ cd bewype-yui3-gallery
-florent@florent-laptop:~/.../js/bewype-yui3-gallery$ ls -l
+florent@florent-laptop:~$ cd ~
+florent@florent-laptop:~$ git clone git@github.com:pygloo/bewype-yui3-gallery.git
+florent@florent-laptop:~$ cd ~/<MEDIA_ROOT>/edld/js
+florent@florent-laptop:~/<MEDIA_ROOT>/edld/js$ ln -s ~/bewype-yui3-gallery/build bewype-yui3-gallery
+florent@florent-laptop:~/<MEDIA_ROOT>/edld/js$ cd bewype-yui3-gallery
+florent@florent-laptop:~/<MEDIA_ROOT>/edld/js$ ls -l
 drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 anim
 drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 arraysort
 drwxr-xr-x 2 florent florent 4096 2010-11-16 10:20 async-queue

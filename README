@@ -25,9 +25,26 @@ Installation
 Unfortunatally this module is not released yet. But you can install it simply
 as follow after coling the main github repository of the project::
 
-    git clone git@github.com:pygloo/emencia-django-layout-designer.git
+    cd ~
+    git clone https://github.com/pygloo/emencia-django-layout-designer.git
     cd emencia-django-layout-designer
     python setup.py install (or develop)
+
+This module is essencially based on a YUI3 client named `bewype-layout-designer`
+and it should be retrieved seperately for another github repo as follow::
+
+    cd ~
+    git clone https://github.com/pygloo/bewype-yui3-gallery.git
+
+Then we need to make a symbolic link of the builded YUI3 resources in the media
+folder of the django module as follow::
+
+    cd ~/emencia-django-layout-designer
+    cd emencia/django/layout/designer
+    cd media/edld/js
+    ln -s ~/bewype-yui3-gallery/build bewype-yui3-gallery
+    
+Should be ok for the modules files. Let's configure it now ;)
 
 
 The settings file
