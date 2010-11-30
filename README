@@ -1,4 +1,3 @@
-
 Emencia-Django-Layout-Designer
 ==============================
 
@@ -30,11 +29,13 @@ as follow after coling the main github repository of the project::
     cd emencia-django-layout-designer
     python setup.py install (or develop)
 
+
 This module is essencially based on a YUI3 client named `bewype-layout-designer`
 and it should be retrieved seperately for another github repo as follow::
 
     cd ~
     git clone https://github.com/pygloo/bewype-yui3-gallery.git
+
 
 Then we need to make a symbolic link of the builded YUI3 resources in the media
 folder of the django module as follow::
@@ -44,6 +45,7 @@ folder of the django module as follow::
     cd media/edld/js
     ln -s ~/bewype-yui3-gallery/build bewype-yui3-gallery
     
+
 Should be ok for the modules files. Let's configure it now ;)
 
 
@@ -57,22 +59,12 @@ Add `'django_wysiwyg'` to your `INSTALLED_APPS` in `settings.py`::
         'emencia.django.layout.designer',
     )
 
-To manage file uploading in the layout designer you should create an uploads
-under the /media/edld folder as follow::
-
-    /media/edld/css
-    /media/edld/js
-    /media/edld/uploads
-
-All uploaded files will go there using a random name and will be available
-according the same mechanism::
-
-    ...
-    <img src="/edld/uploads/XosvPkOfEZOOziCRaTnwvQMB" ...>
-
 
 The urls file
 ~~~~~~~~~~~~~
+
+Here is were everything happen for your app ...
+
 
 Admin import
 ------------
@@ -83,6 +75,7 @@ Here is how we import the required modules and init them to do so::
     # Uncomment the next two lines to enable the admin:
     from django.contrib import admin
     admin.autodiscover()
+
 
 Additionally, we need to the admin form field named `content` that should
 implement our `LayoutDesignerWidget` widget. We wrote a simple admin module in
@@ -109,6 +102,7 @@ Here how you can set your urls now::
         ...
     )
 
+
 Ok, maybe you need to deliver your files locally for some development reasons::
 
     # ... a site settings
@@ -123,6 +117,28 @@ Ok, maybe you need to deliver your files locally for some development reasons::
                            {'document_root': settings.MEDIA_ROOT + '/edld'}),
                        ...
                        )
+
+
+The upload issue
+~~~~~~~~~~~~~~~~
+
+To manage file uploading in the layout designer you should create an uploads
+under the /media/edld folder as follow::
+
+    /media/edld/css
+    /media/edld/js
+    /media/edld/uploads
+
+
+All uploaded files will go there using a random name and will be available
+according the same mechanism::
+
+    ...
+    <img src="/edld/uploads/XosvPkOfEZOOziCRaTnwvQMB" ...>
+
+
+Note: may be this hard coded way of managing upload will move to a more generic
+and configurable way of doing ...
 
 
 Usage
@@ -140,6 +156,7 @@ line it opens and it shows 2 images:
     * add a column
     * add a row
 
+
 Then another, blue again, line appears. This line offer new possiblities:
 
     * add a row (if column) || add a column (if row)
@@ -147,12 +164,14 @@ Then another, blue again, line appears. This line offer new possiblities:
     * add an image
     * remove the column (if column) || remove the row (if row)
 
+
 For example if we click on the icon `add text` a new empty cell should appear.
 3 icons are present in the bottom right part of this cell:
 
     * move (for d'n'd issues)
     * edit to change text and everything
     * remove cell
+
 
 ... your turn!
 
@@ -173,4 +192,5 @@ Big thanks to Emencia for its support and for its contribution in such a cool
 open-source project::
 
     http://www.emencia.fr
+
 
