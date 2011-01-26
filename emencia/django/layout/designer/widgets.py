@@ -31,9 +31,9 @@ class LayoutDesignerWidget(forms.Textarea):
         final_attrs = self.build_attrs(attrs, name=name)
         return mark_safe(u'''<div id='%s' class='yui3-skin-sam'>%s</div><br/>
 <center><a id="designer_preview" href="#">Preview</a></center><br/>
-<input id="content_id" "type="hidden" value="%s" name="content_id"/>
-<input id="upload_url" "type="hidden" value="%s" name="content_id"/>
-<input id="file_static_path" "type="hidden" value="%s" name="content_id"/>''' % (
+<input id="content_id" type="hidden" value="%s" name="content_id"/>
+<input id="upload_url" type="hidden" value="%s" name="content_id"/>
+<input id="file_static_path" type="hidden" value="%s" name="content_id"/>''' % (
     final_attrs['id'], force_unicode(value),
     final_attrs['id'], reverse('layout_designer_upload'),
     MEDIA_URL + 'uploads/'))
